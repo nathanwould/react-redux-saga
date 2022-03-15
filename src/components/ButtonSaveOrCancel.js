@@ -1,6 +1,6 @@
 import { Button } from "semantic-ui-react"
 
-export default function ButtonSaveOrCancel() {
+export default function ButtonSaveOrCancel({ addEntry }) {
     return (
         <Button.Group 
           style={{
@@ -9,7 +9,12 @@ export default function ButtonSaveOrCancel() {
         >
           <Button danger>Cancel</Button>
           <Button.Or />
-          <Button primary>Ok</Button>
+          <Button 
+            primary 
+            onClick={() => addEntry()}
+          >
+            Ok
+          </Button>
         </Button.Group>
     )
 }
